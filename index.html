@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lightkeeper</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/afterglow-crt/crt.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="crt-green">
+    <div class="screen">
+      <div class="beam" id="beam"></div>
+      <image
+        id="glass"
+        src="./assets/crack.png"
+        style="width: 100vw; height: 100vh; z-index: 100; opacity: 0"
+      ></image>
+    </div>
+    <div id="container">
+      <div id="start-screen">
+        <div id="start-title">LIGHTKEEPER</div>
+        <button id="start-button" type="button">START</button>
+        <button
+          id="control-button"
+          type="button"
+          onclick="
+            alert(
+              'STRENGTH -> up and down arrow keys\nDIRECTION -> left and right arrow keys\nCOLOUR -> space bar\nWhite attracts, Red repels\nPLAGUE > 0 drains HEALTH',
+            )
+          "
+        >
+          CONTROLS
+        </button>
+      </div>
+      <div id="over-screen">
+        <div id="over-title">YOU PERISHED</div>
+        <button id="over-button" type="button">RESTART</button>
+      </div>
+      <div id="left-panel">
+        <div class="plate" style="top: 42px; width: 300px; height: 50px">
+          LIGHT CONTROLS
+        </div>
+        <div id="groove"></div>
+        <div id="slider"></div>
+        <div id="knob"><div id="knob-marker"></div></div>
+        <div id="button"></div>
+        <div class="panel-text" style="top: 745px">STRENGTH</div>
+        <div
+          class="panel-text"
+          style="top: 840px; left: 45px; letter-spacing: 0.05em"
+        >
+          DIRECTION
+        </div>
+        <div
+          class="panel-text"
+          style="
+            top: 840px;
+            right: 50px;
+            letter-spacing: 0.1em;
+            font-size: 23px;
+          "
+        >
+          COLOUR
+        </div>
+        <div class="slit" style="left: 90px; top: 157px"></div>
+        <div class="slit" style="left: 90px; top: 687px"></div>
+        <div class="slit" style="left: 90px; top: 422px"></div>
+        <div class="slit" style="left: 115px; top: 223.25px; width: 20px"></div>
+        <div class="slit" style="left: 115px; top: 289.5px; width: 20px"></div>
+        <div class="slit" style="left: 115px; top: 355.75px; width: 20px"></div>
+        <div class="slit" style="left: 115px; top: 488.25px; width: 20px"></div>
+        <div class="slit" style="left: 115px; top: 554.5px; width: 20px"></div>
+        <div class="slit" style="left: 115px; top: 620.75px; width: 20px"></div>
+
+        <div class="slit" style="right: 90px; top: 157px"></div>
+        <div class="slit" style="right: 90px; top: 687px"></div>
+        <div class="slit" style="right: 90px; top: 422px"></div>
+        <div
+          class="slit"
+          style="right: 115px; top: 223.25px; width: 20px"
+        ></div>
+        <div class="slit" style="right: 115px; top: 289.5px; width: 20px"></div>
+        <div
+          class="slit"
+          style="right: 115px; top: 355.75px; width: 20px"
+        ></div>
+        <div
+          class="slit"
+          style="right: 115px; top: 488.25px; width: 20px"
+        ></div>
+        <div class="slit" style="right: 115px; top: 554.5px; width: 20px"></div>
+        <div
+          class="slit"
+          style="right: 115px; top: 620.75px; width: 20px"
+        ></div>
+      </div>
+      <div id="radar-panel">
+        <div id="radar"></div>
+        <div class="rcircle" style="width: 257px; height: 257px"></div>
+        <div class="rcircle" style="width: 515px; height: 515px"></div>
+        <div class="rcircle" style="width: 772px; height: 772px"></div>
+        <div
+          class="rcircle"
+          style="
+            width: 150px;
+            height: 150px;
+            border-color: #257d67;
+            background-color: #082527;
+            border-width: 4px;
+            z-index: 1;
+          "
+        ></div>
+        <div
+          class="rcircle"
+          style="
+            width: 100px;
+            height: 100px;
+            border-color: #5f8752;
+            background-color: #284026;
+            border-width: 4px;
+            z-index: 2;
+          "
+        ></div>
+        <div
+          class="rcircle"
+          style="
+            width: 30px;
+            height: 30px;
+            border-color: white;
+            background-color: white;
+            border-width: 4px;
+            z-index: 4;
+          "
+        ></div>
+        <div class="rcircle" style="width: 1px; height: 1030px"></div>
+        <div class="rcircle" style="width: 1030px; height: 1px"></div>
+        <div
+          class="rcircle"
+          style="
+            width: 10px;
+            height: 85px;
+            background-color: white;
+            position: absolute;
+            bottom: 540px;
+            z-index: 1;
+          "
+        ></div>
+        <div
+          class="rcircle"
+          style="
+            width: 10px;
+            height: 85px;
+            background-color: white;
+            position: absolute;
+            top: 520px;
+            left: 575px;
+            z-index: 1;
+            transform-origin: center center;
+            transform: rotate(120deg);
+          "
+        ></div>
+        <div
+          class="rcircle"
+          style="
+            width: 10px;
+            height: 85px;
+            background-color: white;
+            position: absolute;
+            top: 520px;
+            right: 575px;
+            z-index: 1;
+            transform-origin: center center;
+            transform: rotate(240deg);
+          "
+        ></div>
+        <div id="sector"></div>
+        <div id="rtext">RADAR</div>
+        <div id="clock">08:00</div>
+      </div>
+      <div id="right-panel">
+        <div class="plate" style="top: 42px; width: 360px; height: 50px">
+          RADIO ROOM
+        </div>
+
+        <div class="plate" style="top: 120px; width: 360px; height: 390px">
+          <div class="radio-panel">
+            <div id="radio-text"></div>
+          </div>
+        </div>
+
+        <div class="plate" style="top: 560px; width: 360px; height: 50px">
+          RESOURCES
+        </div>
+
+        <div class="plate" style="top: 638px; width: 360px; height: 390px">
+          <div class="radio-panel"></div>
+          <div id="money-bar" class="bar" style="left: 32px"></div>
+          <div id="food-bar" class="bar" style="left: 112px"></div>
+          <div id="health-bar" class="bar" style="left: 192px"></div>
+          <div id="infection-bar" class="bar" style="left: 272px"></div>
+
+          <div class="resource-label" style="left: 20px">MONEY</div>
+          <div class="resource-label" style="left: 100px">FOOD</div>
+          <div class="resource-label" style="left: 180px">HEALTH</div>
+          <div class="resource-label" style="left: 260px">PLAGUE</div>
+
+          <div id="money" class="header">$1000</div>
+          <div id="food" class="header">100%</div>
+          <div id="health" class="header">100%</div>
+          <div id="plague" class="header">100%</div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const container = document.getElementById("container");
+      const BASE_WIDTH = 1920;
+      const BASE_HEIGHT = 1080;
+
+      // Throttled resize using requestAnimationFrame
+      let isScaling = false;
+
+      function resizeContainer() {
+        if (isScaling) return;
+        isScaling = true;
+
+        requestAnimationFrame(() => {
+          const scaleX = window.innerWidth / BASE_WIDTH;
+          const scaleY = window.innerHeight / BASE_HEIGHT;
+          const scale = Math.min(scaleX, scaleY);
+
+          // Using translate3d forces subpixel hardware compositing on the GPU
+          container.style.transform = `translate3d(-50%, -50%, 0) scale(${scale})`;
+          isScaling = false;
+        });
+      }
+
+      window.addEventListener("resize", resizeContainer, { passive: true });
+      resizeContainer();
+
+      //Sweep Lines
+      const radarPanel = document.getElementById("radar-panel");
+      const TOTAL_LINES = 20;
+      const SWEEP_SPAN = 45;
+      const fragment = document.createDocumentFragment();
+
+      for (let i = 0; i < TOTAL_LINES; i++) {
+        const line = document.createElement("div");
+        line.className = "rline";
+
+        const angle = -((i / (TOTAL_LINES - 1)) * SWEEP_SPAN);
+        const opacity = Math.pow(1 - i / TOTAL_LINES, 2);
+
+        line.style.opacity = opacity.toFixed(4);
+        line.style.setProperty("--start-angle", `${angle.toFixed(2)}deg`);
+
+        fragment.appendChild(line);
+      }
+
+      // Single paint call for all lines
+      radarPanel.appendChild(fragment);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="game.js"></script>
+    <script src="boats.js"></script>
+  </body>
+</html>
