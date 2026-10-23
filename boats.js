@@ -226,6 +226,7 @@ addBoat({
   location: 330,
   heading: miss(330, -26),
   speed: 34,
+  lightResponse: "toward",
   turnRadius: 75,
   dockingTime: 20, // plunders and leaves
   dialogueEnter: "Ahoy matey, honest trade! $300 for one berth. Light us in!",
